@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shikhar's Portfolio</title>
+  <link rel="icon" href="{{url_for('static',filename='Logo.avif')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+<body class="light-mode">
+  <!-- Toggle Button -->
+  <div class="toggle-btn btn btn-outline-dark">Dark Mode</div>
+
+  <!-- Shapes Container -->
+  <div class="shapes-container">
+    <!-- 10 shapes -->
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <!-- Portfolio Container -->
+  <div class="portfolio-container container-fluid d-flex flex-column flex-md-row align-items-center">
+    <!-- Left Content -->
+    <div class="content text-center text-md-start">
+      <h1>Shikhar Tiwari</h1>
+      <p><i>Web Developer | Mern Stack & Python</i></p>
+      <!-- Contact Me Button under Content -->
+<div class="contact-button-container">
+  <button class="contact-button">Contact Me</button>
+</div>
+
+<!-- Contact Form Overlay -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-form-container">
+    <h2>Contact Me</h2>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="contact-button">Send Message</button>
+      <button type="button" class="close-button">Close</button>
+    </form>
+  </div>
+</div>
+
+    </div>
+    <!-- Profile Image -->
+    <div class="profile-image">
+      <img src="{{url_for('static',filename='DP1.png')}}" alt="Shikhar Tiwari">
+    </div>
+  </div>
+  <!-- Social Media Icons Section -->
+<div class="social-icons">
+  <a href="https://instagram.com/shikhar._5834" target="_blank" class="social-link">
+    <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+  </a>
+  <a href="https://twitter.com" target="_blank" class="social-link">
+    <i class="fab fa-twitter"></i><span>Twitter</span>
+  </a>
+  <a href="https://www.linkedin.com/in/shikhar-tiwari-b40803222/" target="_blank" class="social-link">
+    <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+  </a>
+  <a href="https://github.com/ShikharT001" target="_blank" class="social-link">
+    <i class="fab fa-github"></i><span>GitHub</span>
+  </a>
+</div>
+
+<!-- Left Side Arrow Button for Skills -->
+<div class="skills-arrow-container">
+  <button class="skills-arrow">
+    <span>S</span>
+    <span>K</span>
+    <span>I</span>
+    <span>L</span>
+    <span>L</span>
+    <span>S</span>
+  </button>
+</div>
+
+<!-- Skills Overlay -->
+<div class="skills-overlay" id="skillsOverlay">
+  <div class="skills-content">
+    <h2>My Skills</h2>
+    <!-- Rotating Triangles -->
+    <div class="triangle-container">
+      <div class="triangle triangle-left"></div>
+      <div class="triangle triangle-right"></div>
+    </div>
+    <div class="skills-hover-text" id="skillsHoverText">Skill Level</div>
+    <div class="skills-cards">
+      <!-- Skill Cards with Levels -->
+      <div class="skill-card" data-skill="Advanced">HTML</div>
+      <div class="skill-card" data-skill="Intermediate">CSS</div>
+      <div class="skill-card" data-skill="Good">JavaScript</div>
+      <div class="skill-card" data-skill="Better">Python</div>
+      <div class="skill-card" data-skill="Advanced">Bootstrap</div>
+    </div>
+    <button class="close-skills">&times;</button>
+  </div>
+</div>
+
+ 
+
+  <script src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+</html>

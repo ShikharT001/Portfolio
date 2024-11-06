@@ -1,0 +1,452 @@
+/* Light & Dark Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #333;
+  }
+  body.dark-mode {
+    background-color: #181818;
+    color: #ddd;
+  }
+  .toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Main Container */
+  .portfolio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px; /* Controls the space between content and image */
+  }
+  
+  /* Profile Image */
+  .profile-image {
+    width: 450px; /* Reduced size for a more compact look */
+    height: 450px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 128, 255, 0.5);
+    background-image: linear-gradient(135deg, #ff7f50, #1e90ff);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    
+  }
+  
+  /* Content */
+  .content {
+    max-width: 50%;
+  }
+  .content h1 {
+    color:#00fa9a;
+    font-size: 2.5rem; /* Reduced font size */
+  }
+  .content p {
+    font-size: 1.5rem;
+    margin-top: 5px; /* Slight spacing between name and title */
+  }
+  
+  /* Moving Shapes */
+  .shapes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .shape {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    opacity: 0.8;
+    border-radius: 40px;
+    transition: transform 0.1s ease-out;
+  }
+  /* Random Colors for Shapes */
+  .shape:nth-child(1) { background-color: #ff6347; }
+  .shape:nth-child(2) { background-color: #ffa500; }
+  .shape:nth-child(3) { background-color: #8a2be2; }
+  .shape:nth-child(4) { background-color: #ff1493; }
+  .shape:nth-child(5) { background-color: #00fa9a; }
+  .shape:nth-child(6) { background-color: #1e90ff; }
+  .shape:nth-child(7) { background-color: #dc143c; }
+  .shape:nth-child(8) { background-color: #ff4500; }
+  .shape:nth-child(9) { background-color: #4682b4; }
+  .shape:nth-child(10) { background-color: #32cd32; }
+  
+/* Light & Dark Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #333;
+  }
+  body.dark-mode {
+    background-color: #181818;
+    color: #ddd;
+  }
+  body.light-mode .social-link {
+    color: #333; /* Dark color for light mode */
+  }
+  body.dark-mode .social-link {
+    color: #ddd; /* Light color for dark mode */
+  }
+  
+  .toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Social Media Icons */
+  .social-icons {
+    width:100px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
+    /* border:1px solid red; */
+  }
+  
+  .social-link {
+    width:150px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.3s ease;
+    /* border:1px solid blue; */
+    
+  }
+  
+  .social-link i {
+    margin-left: 80px;
+    font-size: 1.5rem;
+    /* border:1px solid red; */
+  }
+  
+  .social-link span {
+    position: absolute;
+    right: -100%; /* Hidden by default */
+    white-space: nowrap;
+    color: inherit; /* Inherit color for dark/light mode */
+    transition: right 0.3s ease; /* Slide out effect */
+    color:cyan;
+  }
+  
+  /* Hover Effect */
+  .social-link:hover span {
+    right: 50%; /* Slide text over the icon from right to left */
+  }
+  
+  .social-link i {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-link:hover i {
+    transform: scale(1.1);
+  }
+
+  /* Contact Button */
+.contact-button-container {
+    margin-top: 20px;
+  }
+  .contact-button {
+    display: block;
+    margin: 0 auto;
+    border-radius:10px;
+    height:50px;
+    width:120px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 128, 255, 0.5);
+    background-image: linear-gradient(135deg, #ff7f50, #1e90ff);
+  }
+  
+  /* Contact Form Overlay */
+  .contact-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .contact-form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .contact-form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  /* Light and Dark Mode Adjustments */
+  body.light-mode .contact-form-container {
+    background-color: #ffffff;
+    color: #333;
+  }
+  body.dark-mode .contact-form-container {
+    background-color: #333;
+    color: #ddd;
+  }
+  
+
+  /* Left Arrow Button */
+.skills-arrow-container {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.skills-arrow {
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border: none;
+  height:250px;
+  width:50px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.skills-arrow:hover {
+  transform: scale(1.1);
+}
+
+
+  /* Skills Overlay - Adjusted for Slide-in Animation */
+  .skills-overlay {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transform: translateX(-100%); /* Hidden to the left initially */
+    transition: transform 0.5s ease; /* Slide-in effect */
+  }
+  
+  .skills-overlay.show {
+    transform: translateX(10%); /* Move to center when visible */
+  }
+  
+.skills-content {
+  background-color: #ffffff;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.skills-content h2 {
+  font-size: 2rem;
+  margin-bottom: 100px;
+}
+
+.skills-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  /* border:1px solid red; */
+}
+
+/* Skill Card Shadow */
+.skill-card {
+  width: 100px;
+  height: 100px;
+  background-color: #00fa9a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Bottom shadow effect */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Text Box in Skills Overlay */
+.skills-hover-text {
+  display: none; /* Hidden by default */
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show hover text when skill card is hovered */
+.skills-content:hover .skills-hover-text {
+  display: block;
+  opacity: 1;
+}
+
+
+/* Close Button */
+.close-skills {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Light and Dark Mode Adjustments */
+body.light-mode .skills-content {
+  background-color: #ffffff;
+  color: #333;
+}
+body.dark-mode .skills-content {
+  background-color: #333;
+  color: #ddd;
+}
+
+/* Triangle Container */
+.triangle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Adjust space between heading and skills cards */
+  margin-bottom:100px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+/* Triangle Styles */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+  border-bottom: 180px solid #16d8c5;
+  position: absolute;
+  border-radius: 20px; /* Rounded edges */
+  transform-origin: center center;
+}
+
+
+
+.triangle-left {
+  animation: rotateLeft 3s linear infinite;
+}
+
+.triangle-right {
+  animation: rotateRight 3s linear infinite;
+}
+
+/* Rotating Animations */
+@keyframes rotateLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateRight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
