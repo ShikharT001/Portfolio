@@ -1,3 +1,4 @@
+
 /* Light & Dark Mode */
 body.light-mode {
     background-color: #ffffff;
@@ -31,7 +32,7 @@ body.light-mode {
     background-color: #ddd;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 128, 255, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(150, 247, 4, 0.1), 0 2px 4px -1px rgba(1, 250, 192, 0.427);
     background-image: linear-gradient(135deg, #ff7f50, #1e90ff);
     border-radius: 50px;
     display: flex;
@@ -287,20 +288,21 @@ body.light-mode {
     left: 0;
     width: 80%;
     height: 80%;
-    background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    border-radius: 10px;
     transform: translateX(-100%); /* Hidden to the left initially */
     transition: transform 0.5s ease; /* Slide-in effect */
   }
+
+  
   
   .skills-overlay.show {
     transform: translateX(10%); /* Move to center when visible */
   }
   
 .skills-content {
-  background-color: #ffffff;
   color: #333;
   width: 100%;
   height: 100%;
@@ -314,6 +316,17 @@ body.light-mode {
   justify-content: center;
   text-align: center;
 }
+
+
+  /* Light and Dark Mode Adjustments */
+  body.light-mode .skills-content {
+    background-color: red;
+    color: #333;
+  }
+  body.dark-mode .skills-content {
+    background-color: purple;
+    color: #ddd;
+  }
 
 .skills-content h2 {
   font-size: 2rem;
@@ -397,7 +410,6 @@ body.dark-mode .skills-content {
   background-color: #333;
   color: #ddd;
 }
-
 /* Triangle Container */
 .triangle-container {
   display: flex;
@@ -416,10 +428,12 @@ body.dark-mode .skills-content {
   height: 0;
   border-left: 90px solid transparent;
   border-right: 90px solid transparent;
-  border-bottom: 180px solid #16d8c5;
+  border-bottom: 180px solid transparent ;
   position: absolute;
-  border-radius: 20px; /* Rounded edges */
+  border-radius: 10px; /* Rounded edges */
   transform-origin: center center;
+  
+  background-color: yellow;
 }
 
 
