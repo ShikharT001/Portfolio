@@ -7,9 +7,18 @@
   <link rel="icon" href="static/Logo.avif">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
 </head>
 <body class="light-mode">
+  <header class="header">
+    <nav class="navbar">
+      <ul>
+        <a href="/aboutme"><li>About me</li></a>
+       <a href="#"><li>Blog</li></a>
+       <a href="#"><li>Projects</li></a>
+      </ul>
+    </nav>
+  </header>
   <!-- Toggle Button -->
   <div class="toggle-btn btn btn-outline-dark">Dark Mode</div>
 
@@ -32,8 +41,8 @@
   <div class="portfolio-container container-fluid d-flex flex-column flex-md-row align-items-center">
     <!-- Left Content -->
     <div class="content text-center text-md-start">
-      <h1>Shikhar Tiwari</h1>
-      <p><i>Web Developer | Mern Stack & Python</i></p>
+      <h1 class="text-shadow">Shikhar Tiwari</h1>
+      <p><i class="text-shadow">Web Developer | Mern Stack & Python</i></p>
       <!-- Contact Me Button under Content -->
 <div class="contact-button-container">
   <button class="contact-button">Contact Me</button>
@@ -69,8 +78,8 @@
     </div>
   </div>
   <!-- Social Media Icons Section -->
-<div class="social-icons">
-  <a href="https://instagram.com/shikhar._5834" target="_blank" class="social-link">
+<div class="social-icons blur">
+  <a href="https://instagram.com/shikhar._5834"  target="_blank" class="social-link">
     <i class="fa-brands fa-instagram"></i><span>Instagram</span>
   </a>
   <a href="https://twitter.com" target="_blank" class="social-link">
@@ -101,15 +110,10 @@
   <div class="skills-content">
     <h2>My Skills</h2>
     <!-- Rotating Triangles -->
-     <div class="outer">
-    <div class="triangle-container">
-      <div class="triangle triangle-left"></div>
-      
-      <div class="triangle triangle"></div>
-      <div class="triangle triangle-right"></div>
-    </div>
+    
+   
   </div>
-    <div class="skills-hover-text" id="skillsHoverText">Skill Level</div>
+  <div class="skills-hover-text" id="skillsHoverText">Skill Level</div>
     <div class="skills-cards">
       <!-- Skill Cards with Levels -->
       <div class="skill-card" data-skill="Advanced">HTML</div>
@@ -124,6 +128,6 @@
 
  
 
-  <script src="static/script.js"></script>
+  <script src="{{url_for('static',filename='script.js')}}"></script>
 </body>
 </html>
