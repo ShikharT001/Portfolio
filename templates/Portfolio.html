@@ -10,21 +10,16 @@
   <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
 </head>
 <body class="light-mode">
-  <header class="header">
-    <nav class="navbar">
-      <ul>
-        <a href="/aboutme"><li>About me</li></a>
-       <a href="#"><li>Blog</li></a>
-       <a href="#"><li>Projects</li></a>
-      </ul>
-    </nav>
-  </header>
-  <!-- Toggle Button -->
-  <div class="toggle-btn btn btn-outline-dark">Dark Mode</div>
+ {% include 'header.html'%}
 
   <!-- Shapes Container -->
   <div class="shapes-container">
     <!-- 10 shapes -->
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
     <div class="shape"></div>
     <div class="shape"></div>
     <div class="shape"></div>
@@ -50,20 +45,20 @@
 
 <!-- Contact Form Overlay -->
 <div class="contact-overlay" id="contactOverlay">
-  <div class="contact-form-container">
+  <div class="contact-form-container blur">
     <h2>Contact Me</h2>
     <form action="#" method="POST">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" class="blur" id="name" name="name" required>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" class="blur" id="email" name="email" required>
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" class="blur" name="message" rows="4" required></textarea>
       </div>
       <button type="submit" class="contact-button">Send Message</button>
       <button type="button" class="close-button">Close</button>
@@ -77,37 +72,13 @@
       <img src="static/DP1.png" alt="Shikhar Tiwari">
     </div>
   </div>
-  <!-- Social Media Icons Section -->
-<div class="social-icons blur">
-  <a href="https://instagram.com/shikhar._5834"  target="_blank" class="social-link">
-    <i class="fa-brands fa-instagram"></i><span>Instagram</span>
-  </a>
-  <a href="https://twitter.com" target="_blank" class="social-link">
-    <i class="fab fa-twitter"></i><span>Twitter</span>
-  </a>
-  <a href="https://www.linkedin.com/in/shikhar-tiwari-b40803222/" target="_blank" class="social-link">
-    <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
-  </a>
-  <a href="https://github.com/ShikharT001" target="_blank" class="social-link">
-    <i class="fab fa-github"></i><span>GitHub</span>
-  </a>
-</div>
-
-<!-- Left Side Arrow Button for Skills -->
-<div class="skills-arrow-container">
-  <button class="skills-arrow">
-    <span>S</span>
-    <span>K</span>
-    <span>I</span>
-    <span>L</span>
-    <span>L</span>
-    <span>S</span>
-  </button>
-</div>
-
+ {% include 'social.html' %}
 <!-- Skills Overlay -->
 <div class="skills-overlay" id="skillsOverlay">
-  <div class="skills-content">
+  <div class="skills-content" style="
+     backdrop-filter: blur(10px); 
+     background-color: rgba(255, 255, 255, 0.3); 
+     border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
     <h2>My Skills</h2>
     <!-- Rotating Triangles -->
     

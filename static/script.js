@@ -64,3 +64,27 @@ skillCards.forEach(card => {
     skillsHoverText.style.opacity = '0';
   });
 });
+
+
+// Sparkle backgorund 
+
+
+
+const sparkleCount = 50; // Number of sparkles
+
+for (let i = 0; i < sparkleCount; i++) {
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+
+  // Random initial positions
+  sparkle.style.left = `${Math.random() * 100}vw`;
+  sparkle.style.top = `${Math.random() * 100}vh`;
+
+  // Random animation duration and delay
+  const duration = Math.random() * 5 + 2; // 2s to 7s
+  const delay = Math.random() * 2; // 0s to 2s
+  sparkle.style.animationDuration = `${duration}s`;
+  sparkle.style.animationDelay = `${delay}s`;
+
+  document.body.appendChild(sparkle);
+}

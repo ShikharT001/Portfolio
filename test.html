@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Water Drop</title>
-    <style>
-        .water-drop {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(to bottom, #C9E9F5, #E3FAFF);
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            position: relative;
-            animation: drop 2s infinite;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Sparkles</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
 
-        .water-drop::after {
-            content: '';
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            width: 20px;
-            height: 20px;
-            background: #E3FAFF;
-            border-radius: 70%;
-            transform: translateX(-50%);
-        }
+    .sparkle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: white;
+      border-radius: 50%;
+      animation: moveSparkle 3s linear infinite, fade 3s ease-in-out infinite;
+    }
 
-        @keyframes drop {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(20px);
-            }
-        }
-    </style>
+    @keyframes moveSparkle {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(calc(100vw - 50px), calc(100vh - 50px));
+      }
+    }
+
+    @keyframes fade {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="water-drop"></div>
+  <script>
+    const sparkleCount = 50; // Number of sparkles
+
+    for (let i = 0; i < sparkleCount; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+
+      // Random initial positions
+      sparkle.style.left = `${Math.random() * 100}vw`;
+      sparkle.style.top = `${Math.random() * 100}vh`;
+
+      // Random animation duration and delay
+      const duration = Math.random() * 5 + 2; // 2s to 7s
+      const delay = Math.random() * 2; // 0s to 2s
+      sparkle.style.animationDuration = `${duration}s`;
+      sparkle.style.animationDelay = `${delay}s`;
+
+      document.body.appendChild(sparkle);
+    }
+  </script>
 </body>
 </html>
